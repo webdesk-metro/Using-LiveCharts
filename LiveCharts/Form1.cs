@@ -57,21 +57,21 @@ namespace LiveCharts
                 new LineSeries
                 {
                     Title = "Series 1",
-                    Values = new ChartValues<double>{2, 8, 5, 79, 22, 189},
+                    Values = new ChartValues<double>{0, 68, 5, 79, 32, 49},
                     PointGeometry = DefaultGeometries.Circle,
                     PointGeometrySize = 10
                 },
                 new LineSeries
                 {
                     Title = "Series 2",
-                    Values = new ChartValues<double>{0, 14, 29, 9, 6, 152},
+                    Values = new ChartValues<double>{76, 120, 29, 9, 6, 102},
                     PointGeometry = DefaultGeometries.Circle,
                     PointGeometrySize = 10
                 },
                 new LineSeries
                 {
                     Title = "Series 3",
-                    Values = new ChartValues<double>{15, 8, 24, 30, 61, 204},
+                    Values = new ChartValues<double>{55, 8, 95, 30, 61, 74},
                     PointGeometry = DefaultGeometries.Circle,
                     PointGeometrySize = 10
                 }
@@ -105,26 +105,35 @@ namespace LiveCharts
             #endregion
 
             #region GeoMap
-            var r = new Random();
-            var values = new Dictionary<string, double>();
-
-            values["MX"] = r.Next(0, 100);
-            values["CA"] = r.Next(0, 100);
-            values["US"] = r.Next(0, 100);
-            values["IN"] = r.Next(0, 100);
-            values["CN"] = r.Next(0, 100);
-            values["JP"] = r.Next(0, 100);
-            values["BR"] = r.Next(0, 100);
-            values["DE"] = r.Next(0, 100);
-            values["FR"] = r.Next(0, 100);
-            values["GB"] = r.Next(0, 100);
-
+            var rand = new Random();
+            var valu = new Dictionary<string, double>();
             var lang = new Dictionary<string, string>();
-            lang["MX"] = "México"; // change the language if necessary
 
-            geoMap1.HeatMap = values;
+            valu["MX"] = rand.Next(0, 100);
+            valu["CA"] = rand.Next(0, 100);
+            valu["US"] = rand.Next(0, 100);
+            valu["IN"] = rand.Next(0, 100);
+            valu["CN"] = rand.Next(0, 100);
+            valu["JP"] = rand.Next(0, 100);
+            valu["BR"] = rand.Next(0, 100);
+            valu["DE"] = rand.Next(0, 100);
+            valu["FR"] = rand.Next(0, 100);
+            valu["UK"] = rand.Next(0, 100);
+
+            lang["MX"] = "Mexico"; // change the language if necessary
+            lang["CA"] = "Canada"; // change the language if necessary
+            lang["US"] = "United States"; // change the language if necessary
+            lang["IN"] = "India"; // change the language if necessary
+            lang["CN"] = "China"; // change the language if necessary
+            lang["JP"] = "Japan"; // change the language if necessary
+            lang["BR"] = "Brazil"; // change the language if necessary
+            lang["GE"] = "Germany"; // change the language if necessary
+            lang["FR"] = "France"; // change the language if necessary
+            lang["UK"] = "United Kingdom"; // change the language if necessary
+
+            geoMap1.HeatMap = valu;
             geoMap1.LanguagePack = lang;
-            geoMap1.Source = "Maps/World.xml";
+            geoMap1.Source = @"Maps\World.xml";
             #endregion
 
             #region Pie
